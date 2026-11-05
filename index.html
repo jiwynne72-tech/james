@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JW English Lessons | James Wynne - Impara, Gioca, Pensa in Inglese</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#101b2d',
+                            900: '#0a111e',
+                            950: '#060a12',
+                        },
+                        gold: {
+                            300: '#f3e5ab',
+                            400: '#e5c158',
+                            500: '#d4af37',
+                            600: '#b38f24',
+                        },
+                        brand: {
+                            dark: '#0a111e',
+                            accent: '#1e3a8a',
+                            gold: '#d4af37',
+                            goldHover: '#c49f27'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #b38f24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-glass {
+            background: rgba(16, 27, 45, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .card-glass:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-brand-gold selection:text-navy-950 min-h-screen flex flex-col">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo Asset -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <img src="./my logo en_2.png" 
+                         onerror="this.onerror=null; this.src='./my logo en.png';" 
+                         alt="JW English Lessons Logo" 
+                         class="h-14 w-auto object-contain transition-transform group-hover:scale-105" />
+                    <div class="hidden sm:flex flex-col">
+                        <span class="font-serif text-lg font-bold text-white group-hover:text-brand-gold transition-colors">
+                            JW ENGLISH
+                        </span>
+                        <span class="text-[10px] tracking-widest text-brand-gold uppercase font-semibold">
+                            Lessons & Method
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-7 text-sm font-medium">
+                    <a href="#about" class="text-slate-300 hover:text-brand-gold transition-colors">About James</a>
+                    <a href="#method" class="text-slate-300 hover:text-brand-gold transition-colors">Methodology</a>
+                    <a href="#app" class="text-slate-300 hover:text-brand-gold transition-colors">Quiz App</a>
+                    <a href="#book" class="text-slate-300 hover:text-brand-gold transition-colors">Free Book</a>
+                    <a href="https://wa.me/393515316723" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-900/30 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">About James</a>
+            <a href="#method" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Methodology</a>
+            <a href="#app" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Quiz App</a>
+            <a href="#book" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Free Book</a>
+            <a href="https://wa.me/393515316723" target="_blank" rel="noopener" class="block px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-center">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Contact on WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950">
+            <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Text Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-brand-gold/40 text-brand-gold text-xs sm:text-sm font-semibold tracking-wide">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>20+ Years Experience | Senior Technical Writer & Educator</span>
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight leading-tight">
+                            JW English Lessons
+                            <span class="block text-2xl sm:text-4xl lg:text-5xl gold-gradient-text mt-2">
+                                Impara, Gioca, Pensa in Inglese
+                            </span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-300 max-w-2xl font-light leading-relaxed">
+                            Practical, high-impact English acquisition for adults and professionals. Learn using real-life context, clear building blocks, and engaging interactive games.
+                        </p>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="https://jiwynne72-tech.github.io/jw-englishquiz-demo/" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-brand-gold text-navy-950 font-bold hover:bg-brand-goldHover transition-all transform hover:-translate-y-0.5 shadow-xl shadow-brand-gold/20">
+                                <i class="fa-solid fa-gamepad text-lg"></i>
+                                <span>Try Interactive Quiz App</span>
+                            </a>
+                            <a href="#book" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-slate-800/90 text-white font-semibold border border-slate-700 hover:bg-slate-700 transition-all">
+                                <i class="fa-solid fa-file-pdf text-red-400 text-lg"></i>
+                                <span>Get Free Sample Book</span>
+                            </a>
+                        </div>
+
+                        <!-- Direct Contact Bar -->
+                        <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-300">
+                            <a href="https://wa.me/393515316723" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                                <span class="font-medium">+39 351 5316723</span>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100082984219547" target="_blank" rel="noopener" class="hover:text-blue-400 transition-colors flex items-center gap-2">
+                                <i class="fa-brands fa-facebook text-blue-400 text-lg"></i>
+                                <span class="font-medium">Facebook Profile</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Profile Image Asset -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-sm card-glass p-6 rounded-3xl shadow-2xl text-center">
+                            <div class="relative inline-block mb-4">
+                                <img src="./profile_jw.png" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/300x300/101b2d/d4af37?text=James+Wynne';" 
+                                     alt="James Wynne Profile" 
+                                     class="w-44 h-44 rounded-full mx-auto object-cover border-4 border-brand-gold shadow-xl" />
+                                <span class="absolute bottom-1 right-2 bg-emerald-500 w-5 h-5 rounded-full border-2 border-navy-900" title="Available for tutoring"></span>
+                            </div>
+
+                            <h3 class="text-2xl font-serif font-bold text-white">James Wynne</h3>
+                            <p class="text-xs text-brand-gold font-medium uppercase tracking-wider mt-1">Educator & Technical Writer</p>
+                            
+                            <p class="text-xs text-slate-300 leading-relaxed italic mt-3 bg-navy-900/80 p-3 rounded-xl border border-slate-800">
+                                "In language learning, context is king. Focus on what you understand, build step by step, and start speaking with confidence."
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Time to Quiz App Section -->
+        <section id="app" class="py-20 bg-navy-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-gold/10 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        Interactive PWA Game Suite
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">
+                        Time to Quiz: <span class="gold-gradient-text">English Games</span>
+                    </h2>
+                    <p class="text-slate-300 text-base">
+                        Gamified learning designed for vocabulary building, intuition, and logical deduction.
+                    </p>
+                </div>
+
+                <!-- App Mockup Image Asset Banner -->
+                <div class="mb-12 rounded-3xl overflow-hidden border border-brand-gold/30 shadow-2xl bg-navy-950">
+                    <img src="./app_image_2.png" 
+                         onerror="this.onerror=null; this.src='./app_image.png';" 
+                         alt="Time to Quiz App Interface Mockup" 
+                         class="w-full h-auto object-cover hover:scale-[1.01] transition-transform duration-500" />
+                </div>
+
+                <!-- Game Modules Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="bg-navy-950 p-5 rounded-2xl border border-slate-800 text-center space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 mx-auto flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-border-all"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">The Wall</h4>
+                        <p class="text-xs text-slate-400">Find hidden connections across 16 clues.</p>
+                    </div>
+
+                    <div class="bg-navy-950 p-5 rounded-2xl border border-slate-800 text-center space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 mx-auto flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Connections</h4>
+                        <p class="text-xs text-slate-400">Deduce thematic links with minimal hints.</p>
+                    </div>
+
+                    <div class="bg-navy-950 p-5 rounded-2xl border border-slate-800 text-center space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 mx-auto flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-timeline"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Chronology</h4>
+                        <p class="text-xs text-slate-400">Order historical and language milestones.</p>
+                    </div>
+
+                    <div class="bg-navy-950 p-5 rounded-2xl border border-slate-800 text-center space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-400 mx-auto flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-shapes"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Odd One Out</h4>
+                        <p class="text-xs text-slate-400">Spot grammar and word-class anomalies.</p>
+                    </div>
+
+                    <div class="bg-navy-950 p-5 rounded-2xl border border-slate-800 text-center space-y-2">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 mx-auto flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">English Sayings</h4>
+                        <p class="text-xs text-slate-400">Master idioms and real spoken expressions.</p>
+                    </div>
+                </div>
+
+                <div class="text-center pt-10">
+                    <a href="https://jiwynne72-tech.github.io/jw-englishquiz-demo/" target="_blank" rel="noopener" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-brand-gold text-navy-950 font-bold hover:bg-brand-goldHover transition-all shadow-xl shadow-brand-gold/20">
+                        <span>Launch App Demo</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Free Sample Book Section -->
+        <section id="book" class="py-20 bg-navy-950 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Book Cover Image Asset -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative group max-w-sm">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-gold to-amber-600 rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-500"></div>
+                            <img src="./building.jpeg" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x550/101b2d/d4af37?text=The+Building+Blocks+of+English';" 
+                                 alt="The Building Blocks of English Book Cover" 
+                                 class="relative rounded-xl border-2 border-brand-gold/40 shadow-2xl object-cover w-full h-auto" />
+                        </div>
+                    </div>
+
+                    <!-- Book Information -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-500/10 text-red-400 text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-book text-sm"></i>
+                            Free Sample PDF Coursebook
+                        </div>
+                        
+                        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">
+                            The Building Blocks of English
+                        </h2>
+                        
+                        <p class="text-brand-gold font-medium text-lg">
+                            A Compendium of the Elements of English with Clear Explanations and Exercises
+                        </p>
+
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Designed specifically for adult language acquisition. This sample edition includes key units from Levels 1 & 2, covering essential verbs (<em>Be, Have, Do, Go</em>), Present Perfect usage in real life, listening strategies, and context-building frameworks.
+                        </p>
+
+                        <div class="bg-navy-900 p-5 rounded-xl border border-slate-800 space-y-3">
+                            <h4 class="font-bold text-white text-sm">What's Inside the Sample:</h4>
+                            <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold"></i>
+                                    <span>Dual EN/IT contextual advice for Italian adult learners</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold"></i>
+                                    <span>Targeted practice exercises & video references</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-check text-brand-gold"></i>
+                                    <span>The 70% text reduction method to focus on core meaning</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <a href="./2026 BLOCKS 1_2_SAMPLE.pdf" download target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold transition-all shadow-lg shadow-red-900/30">
+                                <i class="fa-solid fa-file-pdf text-xl"></i>
+                                <span>Download Free Book Sample (PDF)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section id="method" class="py-20 bg-navy-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-brand-gold">Pedagogical Framework</h2>
+                    <h3 class="text-3xl sm:text-4xl font-serif font-bold text-white">How Adults Learn English</h3>
+                    <p class="text-slate-300 text-sm sm:text-base">
+                        Adults do not learn intrinsically like children. We succeed by using our life experience, deduction, and structured context.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-glass p-6 rounded-2xl space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-ear-listen"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white font-serif">1. Listening</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Expose yourself to authentic English songs, news, and short audio clips. Re-listen multiple times to unlock deeper comprehension.
+                        </p>
+                    </div>
+
+                    <div class="card-glass p-6 rounded-2xl space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white font-serif">2. Speaking</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Practice with real conversations. Focus on getting your message across rather than worrying about minor mistakes.
+                        </p>
+                    </div>
+
+                    <div class="card-glass p-6 rounded-2xl space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white font-serif">3. Reading</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Read articles and context-rich materials. Switch device language settings to build natural everyday vocabulary.
+                        </p>
+                    </div>
+
+                    <div class="card-glass p-6 rounded-2xl space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white font-serif">4. Writing</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Translate expressions you frequently use to express your true voice, participate in interactive blogs, and practice daily.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Educator Section -->
+        <section id="about" class="py-20 bg-navy-950 border-t border-slate-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 card-glass p-8 sm:p-12 rounded-3xl">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="md:col-span-4 text-center">
+                        <img src="./profile_jw.png" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/250x250/101b2d/d4af37?text=James+Wynne';" 
+                             alt="James Wynne" 
+                             class="w-40 h-40 rounded-full mx-auto object-cover border-4 border-brand-gold shadow-xl mb-4" />
+                        <h3 class="text-xl font-bold text-white">James Wynne</h3>
+                        <p class="text-xs text-brand-gold font-medium">Manchester born • Adopted Londoner • Italy</p>
+                    </div>
+
+                    <div class="md:col-span-8 space-y-4">
+                        <h3 class="text-2xl font-serif font-bold text-white">About the Author & Instructor</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            For over two decades, I have been deeply involved in the English language as an educator, linguist, and Senior Technical Writer across Fintech, MedTech, and Cybersecurity sectors.
+                        </p>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            My background in technical communication standards (Simplified Technical English, ISO/GxP regulatory writing) informs my teaching methodology: eliminating ambiguity, establishing clear rhythm, and delivering essential building blocks.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-navy-900 border-t border-slate-800 text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                <div class="space-y-3">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-brand-gold">Get In Touch</h2>
+                    <h3 class="text-3xl font-serif font-bold text-white">Contact & Connect</h3>
+                    <p class="text-slate-300 text-sm">
+                        Available for private lessons, corporate training, public speaking workshops, and educational inquiries.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <a href="https://wa.me/393515316723" target="_blank" rel="noopener" class="p-6 rounded-2xl bg-navy-950 border border-slate-800 hover:border-emerald-500/50 transition-colors group">
+                        <i class="fa-brands fa-whatsapp text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-white text-base">WhatsApp</h4>
+                        <p class="text-xs text-slate-400 mt-1">+39 351 5316723</p>
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=100082984219547" target="_blank" rel="noopener" class="p-6 rounded-2xl bg-navy-950 border border-slate-800 hover:border-blue-500/50 transition-colors group">
+                        <i class="fa-brands fa-facebook-f text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-white text-base">Facebook</h4>
+                        <p class="text-xs text-slate-400 mt-1">JW English Lessons</p>
+                    </a>
+
+                    <a href="mailto:james_wynne@hotmail.com" class="p-6 rounded-2xl bg-navy-950 border border-slate-800 hover:border-brand-gold/50 transition-colors group">
+                        <i class="fa-regular fa-envelope text-4xl text-brand-gold mb-3 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-bold text-white text-base">Email</h4>
+                        <p class="text-xs text-slate-400 mt-1">james_wynne@hotmail.com</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center gap-3">
+                <img src="./my logo en_2.png" 
+                     onerror="this.onerror=null; this.src='./my logo en.png';" 
+                     alt="JW English Lessons Logo" 
+                     class="h-10 w-auto opacity-80" />
+            </div>
+            <p class="text-xs text-slate-500">© 2026 James Wynne | JW English Lessons. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
