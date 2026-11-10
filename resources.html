@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos & Worksheets | JW English - James Wynne</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#101b2d',
+                            900: '#0a111e',
+                            950: '#060a12',
+                        },
+                        gold: {
+                            300: '#f3e5ab',
+                            400: '#e5c158',
+                            500: '#d4af37',
+                            600: '#b38f24',
+                        },
+                        brand: {
+                            dark: '#0a111e',
+                            accent: '#1e3a8a',
+                            gold: '#d4af37',
+                            goldHover: '#c49f27'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #b38f24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-glass {
+            background: rgba(16, 27, 45, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .card-glass:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-brand-gold selection:text-navy-950 min-h-screen flex flex-col">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo Asset -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="./my logo en_2.png" 
+                         onerror="this.onerror=null; this.src='./my logo en2.png';" 
+                         alt="JW English Lessons Logo" 
+                         class="h-14 w-auto object-contain transition-transform group-hover:scale-105" />
+                    <div class="hidden sm:flex flex-col">
+                        <span class="font-serif text-lg font-bold text-white group-hover:text-brand-gold transition-colors">
+                            JW ENGLISH
+                        </span>
+                        <span class="text-[10px] tracking-widest text-brand-gold uppercase font-semibold">
+                            Lessons & Method
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-7 text-sm font-medium">
+                    <a href="index.html" class="text-slate-300 hover:text-brand-gold transition-colors">Home</a>
+                    <a href="#videos" class="text-slate-300 hover:text-brand-gold transition-colors">Video Lessons</a>
+                    <a href="#worksheets" class="text-slate-300 hover:text-brand-gold transition-colors">Worksheets</a>
+                    <a href="https://wa.me/393515316723" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-900/30 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Home</a>
+            <a href="#videos" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Video Lessons</a>
+            <a href="#worksheets" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Worksheets</a>
+            <a href="https://wa.me/393515316723" target="_blank" rel="noopener" class="block px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-center">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Contact on WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Page Hero -->
+        <section class="relative py-16 bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950 border-b border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-brand-gold/40 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Learning Resources</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-serif font-bold text-white">
+                    Videos & <span class="gold-gradient-text">Worksheets</span>
+                </h1>
+                <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base">
+                    Short, focused video lessons and downloadable PDF worksheets to help you master essential English skills.
+                </p>
+            </div>
+        </section>
+
+        <!-- Embedded Videos Section -->
+        <section id="videos" class="py-16 bg-navy-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 space-y-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-500/10 text-red-400 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-brands fa-youtube"></i>
+                        Video Shorts
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Core Skills & Tips</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Introduzione -->
+                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
+                        <h3 class="font-serif font-bold text-lg text-white">Introduzione</h3>
+                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/7NBdsmE8GyQ" title="Introduzione" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Speaking -->
+                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
+                        <h3 class="font-serif font-bold text-lg text-white">Speaking</h3>
+                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/_VNZlj1cE54" title="Speaking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Listening -->
+                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
+                        <h3 class="font-serif font-bold text-lg text-white">Listening</h3>
+                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/2dW9HQo8yPY" title="Listening" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Reading -->
+                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
+                        <h3 class="font-serif font-bold text-lg text-white">Reading</h3>
+                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/2qZfUhtHPxo" title="Reading" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Writing -->
+                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
+                        <h3 class="font-serif font-bold text-lg text-white">Writing</h3>
+                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/Ui7mkByLgFQ" title="Writing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Don't Forget -->
+                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
+                        <h3 class="font-serif font-bold text-lg text-white">Don't Forget</h3>
+                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/GpmcKfx1y_U" title="Don't Forget" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Downloadable Worksheets Section -->
+        <section id="worksheets" class="py-16 bg-navy-900 border-t border-slate-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 space-y-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-gold/10 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        PDF Downloads
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Practice Worksheets</h2>
+                    <p class="text-slate-300 text-sm">Downloadable exercises and exam checklists with answer keys.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Worksheet 1 -->
+                    <a href="./worksheet-1-missing-s-plurals-and-verbs.pdf" download target="_blank" class="card-glass p-6 rounded-2xl flex items-start gap-4 group transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-white group-hover:text-brand-gold transition-colors">
+                                Worksheet: The Missing "S": Perfecting your plurals and verbs
+                            </h3>
+                            <p class="text-xs text-slate-400">Mastering plural nouns and third-person singular verbs in English.</p>
+                            <span class="inline-flex items-center gap-1.5 text-xs text-brand-gold font-semibold pt-2">
+                                <i class="fa-solid fa-download"></i> Download PDF
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Worksheet 2 -->
+                    <a href="./worksheet-2-essential-verbs-be-have-do-go.pdf" download target="_blank" class="card-glass p-6 rounded-2xl flex items-start gap-4 group transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-white group-hover:text-brand-gold transition-colors">
+                                Worksheet: The Essential Verbs: Be | Have | Do | Go
+                            </h3>
+                            <p class="text-xs text-slate-400">Present & past forms and avoiding literal Italian translations.</p>
+                            <span class="inline-flex items-center gap-1.5 text-xs text-brand-gold font-semibold pt-2">
+                                <i class="fa-solid fa-download"></i> Download PDF
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Worksheet 3 -->
+                    <a href="./worksheet-3-zero-article-school-home-work.pdf" download target="_blank" class="card-glass p-6 rounded-2xl flex items-start gap-4 group transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-white group-hover:text-brand-gold transition-colors">
+                                Worksheet: Do you always need an article?
+                            </h3>
+                            <p class="text-xs text-slate-400">When NOT to use "the" with places, general things, languages, and meals.</p>
+                            <span class="inline-flex items-center gap-1.5 text-xs text-brand-gold font-semibold pt-2">
+                                <i class="fa-solid fa-download"></i> Download PDF
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Worksheet 4 -->
+                    <a href="./check list esami.pdf" download target="_blank" class="card-glass p-6 rounded-2xl flex items-start gap-4 group transition-all hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="font-bold text-white group-hover:text-brand-gold transition-colors">
+                                Worksheet: Italian: Check sheet per gli esami
+                            </h3>
+                            <p class="text-xs text-slate-400">Checklist e consigli pratici per superare l'esame di inglese (Reading, Listening, Writing, Speaking).</p>
+                            <span class="inline-flex items-center gap-1.5 text-xs text-brand-gold font-semibold pt-2">
+                                <i class="fa-solid fa-download"></i> Download PDF
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-slate-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center gap-3">
+                <img src="./my logo en_2.png" 
+                     onerror="this.onerror=null; this.src='./my logo en2.png';" 
+                     alt="JW English Lessons Logo" 
+                     class="h-10 w-auto opacity-80" />
+            </div>
+            <p class="text-xs text-slate-500">© 2026 James Wynne | JW English Lessons. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
