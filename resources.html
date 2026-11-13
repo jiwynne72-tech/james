@@ -117,7 +117,7 @@
 
     <main class="flex-grow">
         <!-- Page Hero -->
-        <section class="relative py-16 bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950 border-b border-slate-800">
+        <section class="relative py-12 sm:py-16 bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950 border-b border-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-brand-gold/40 text-brand-gold text-xs font-semibold uppercase tracking-wider">
                     <i class="fa-solid fa-layer-group"></i>
@@ -133,63 +133,115 @@
         </section>
 
         <!-- Embedded Videos Section -->
-        <section id="videos" class="py-16 bg-navy-950">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12 space-y-2">
+        <section id="videos" class="py-12 sm:py-16 bg-navy-950">
+            <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+                <div class="text-center mb-10 space-y-2">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-red-500/10 text-red-400 text-xs font-semibold uppercase tracking-wider">
                         <i class="fa-brands fa-youtube"></i>
-                        Video Shorts
+                        Exam Prep Series
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Core Skills & Tips</h2>
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Core Skills & Exam Strategy</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">
+                        Six bite-sized guides covering everything you need to pass your English exam with confidence.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Side-by-side grid: 2 columns on mobile, 3 on tablet/desktop -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
                     
-                    <!-- Introduzione -->
-                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
-                        <h3 class="font-serif font-bold text-lg text-white">Introduzione</h3>
-                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
-                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/7NBdsmE8GyQ" title="Introduzione" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- 1. Introduzione -->
+                    <div class="card-glass p-3 sm:p-5 rounded-2xl flex flex-col justify-between items-center text-center space-y-3">
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Part 1</span>
+                            <h3 class="font-serif font-bold text-sm sm:text-lg text-white leading-snug">
+                                Exam Success: Where to Start
+                            </h3>
+                            <p class="text-[11px] sm:text-xs text-slate-300 italic leading-relaxed">
+                                An introduction to how English exams work and how to structure your preparation.
+                            </p>
+                        </div>
+                        <div class="w-full max-w-[165px] sm:max-w-[205px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900 shadow-md">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/7NBdsmE8GyQ" title="Exam Success: Where to Start" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <!-- Speaking -->
-                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
-                        <h3 class="font-serif font-bold text-lg text-white">Speaking</h3>
-                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
-                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/_VNZlj1cE54" title="Speaking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- 2. Speaking -->
+                    <div class="card-glass p-3 sm:p-5 rounded-2xl flex flex-col justify-between items-center text-center space-y-3">
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Part 2</span>
+                            <h3 class="font-serif font-bold text-sm sm:text-lg text-white leading-snug">
+                                Speaking with Confidence
+                            </h3>
+                            <p class="text-[11px] sm:text-xs text-slate-300 italic leading-relaxed">
+                                Practical tips to stay calm, sound natural, and keep the conversation flowing under pressure.
+                            </p>
+                        </div>
+                        <div class="w-full max-w-[165px] sm:max-w-[205px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900 shadow-md">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/_VNZlj1cE54" title="Speaking with Confidence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <!-- Listening -->
-                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
-                        <h3 class="font-serif font-bold text-lg text-white">Listening</h3>
-                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
-                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/2dW9HQo8yPY" title="Listening" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- 3. Listening -->
+                    <div class="card-glass p-3 sm:p-5 rounded-2xl flex flex-col justify-between items-center text-center space-y-3">
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Part 3</span>
+                            <h3 class="font-serif font-bold text-sm sm:text-lg text-white leading-snug">
+                                Sharpening Your Listening
+                            </h3>
+                            <p class="text-[11px] sm:text-xs text-slate-300 italic leading-relaxed">
+                                How to catch key information, handle fast speech, and avoid common audio traps.
+                            </p>
+                        </div>
+                        <div class="w-full max-w-[165px] sm:max-w-[205px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900 shadow-md">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/2dW9HQo8yPY" title="Sharpening Your Listening" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <!-- Reading -->
-                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
-                        <h3 class="font-serif font-bold text-lg text-white">Reading</h3>
-                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
-                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/2qZfUhtHPxo" title="Reading" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- 4. Reading -->
+                    <div class="card-glass p-3 sm:p-5 rounded-2xl flex flex-col justify-between items-center text-center space-y-3">
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Part 4</span>
+                            <h3 class="font-serif font-bold text-sm sm:text-lg text-white leading-snug">
+                                Smart Reading Strategies
+                            </h3>
+                            <p class="text-[11px] sm:text-xs text-slate-300 italic leading-relaxed">
+                                Techniques for scanning texts quickly and spotting exact answers without wasting time.
+                            </p>
+                        </div>
+                        <div class="w-full max-w-[165px] sm:max-w-[205px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900 shadow-md">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/2qZfUhtHPxo" title="Smart Reading Strategies" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <!-- Writing -->
-                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
-                        <h3 class="font-serif font-bold text-lg text-white">Writing</h3>
-                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
-                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/Ui7mkByLgFQ" title="Writing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- 5. Writing -->
+                    <div class="card-glass p-3 sm:p-5 rounded-2xl flex flex-col justify-between items-center text-center space-y-3">
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Part 5</span>
+                            <h3 class="font-serif font-bold text-sm sm:text-lg text-white leading-snug">
+                                Structuring Great Writing
+                            </h3>
+                            <p class="text-[11px] sm:text-xs text-slate-300 italic leading-relaxed">
+                                Organizing paragraphs clearly, choosing the right tone, and avoiding typical Italianisms.
+                            </p>
+                        </div>
+                        <div class="w-full max-w-[165px] sm:max-w-[205px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900 shadow-md">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/Ui7mkByLgFQ" title="Structuring Great Writing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <!-- Don't Forget -->
-                    <div class="card-glass p-4 rounded-2xl flex flex-col items-center space-y-4">
-                        <h3 class="font-serif font-bold text-lg text-white">Don't Forget</h3>
-                        <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900">
-                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/GpmcKfx1y_U" title="Don't Forget" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <!-- 6. Don't Forget -->
+                    <div class="card-glass p-3 sm:p-5 rounded-2xl flex flex-col justify-between items-center text-center space-y-3">
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-gold">Part 6</span>
+                            <h3 class="font-serif font-bold text-sm sm:text-lg text-white leading-snug">
+                                Final Exam-Day Reminders
+                            </h3>
+                            <p class="text-[11px] sm:text-xs text-slate-300 italic leading-relaxed">
+                                Essential last-minute checks so you walk into the exam room calm and prepared.
+                            </p>
+                        </div>
+                        <div class="w-full max-w-[165px] sm:max-w-[205px] aspect-[9/16] rounded-xl overflow-hidden border border-slate-800 bg-navy-900 shadow-md">
+                            <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/GpmcKfx1y_U" title="Final Exam-Day Reminders" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
 
