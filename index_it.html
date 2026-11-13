@@ -217,7 +217,7 @@ window.addEventListener("load", function(){
         </div>
     </header>
 
-    <main class="flex-grow">
+    <main class="flex-grow pb-4">
         <!-- Hero Section -->
         <section class="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950">
             <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -280,7 +280,7 @@ window.addEventListener("load", function(){
                             </div>
 
                             <h3 class="text-2xl font-serif font-bold text-white">James Wynne</h3>
-                            <p class="text-xs text-brand-gold font-medium uppercase tracking-wider mt-1">Insegnante, Linguista & Technical Writer</p>
+                            <p class="text-xs text-brand-gold font-medium uppercase tracking-wider mt-1">Insegnante & Technical Writer</p>
                             
                             <p class="text-xs text-slate-300 leading-relaxed italic mt-3 bg-navy-900/80 p-3 rounded-xl border border-slate-800">
                                 "Nell'apprendimento delle lingue, il contesto è sovrano. Concentrati su ciò che capisci, costruisci passo dopo passo e inizia a parlare con sicurezza."
@@ -582,21 +582,25 @@ window.addEventListener("load", function(){
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-navy-950 border-t border-slate-800 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-            <div class="flex items-center justify-center gap-3">
-                <img src="./my logo en_2.png" 
-                     onerror="this.onerror=null; this.src='./my logo en2.png';" 
-                     alt="Logo JW English Lessons" 
-                     class="h-10 w-auto opacity-80" />
+    <!-- Sticky Footer -->
+    <footer class="sticky bottom-0 z-40 bg-navy-950/95 backdrop-blur-md border-t border-slate-800 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+            <img src="./my logo en_2.png" 
+                 onerror="this.onerror=null; this.src='./my logo en2.png';" 
+                 alt="Logo JW English Lessons" 
+                 class="h-7 w-auto opacity-85" />
+            <div class="text-xs text-slate-400 flex items-center gap-2">
+                <a href="mailto:jwenglish@outlook.it" class="hover:text-brand-gold transition-colors">email</a>
+                <span class="text-slate-600">|</span>
+                <a href="https://jiwynne72-tech.github.io/james/" target="_blank" rel="noopener" class="hover:text-brand-gold transition-colors">website</a>
+                <span class="text-slate-600">|</span>
+                <a href="https://wa.me/00393515316723" target="_blank" rel="noopener" class="hover:text-brand-gold transition-colors">whatsapp</a>
             </div>
-            <p class="text-xs text-slate-500">© 2026 James Wynne | JW English Lessons. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
     <!-- Copy Confirmation Toast -->
-    <div id="share-toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-navy-800 border border-brand-gold text-white text-sm font-medium shadow-2xl">
+    <div id="share-toast" class="fixed bottom-16 right-6 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-navy-800 border border-brand-gold text-white text-sm font-medium shadow-2xl">
         <i class="fa-solid fa-check text-brand-gold"></i>
         <span id="share-toast-text">Link copiato negli appunti!</span>
     </div>
