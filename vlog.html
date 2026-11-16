@@ -1,242 +1,320 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Wynne | Vlogs & Musings</title>
-    <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: rgba(22, 27, 34, 0.75);
-            --border-color: rgba(240, 246, 252, 0.1);
-            --text-main: #c9d1d9;
-            --text-bright: #f0f6fc;
-            --accent: #58a6ff;
-            --accent-hover: #79c0ff;
-        }
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #090d16 0%, #111927 100%);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            line-height: 1.6;
-        }
-
-        header {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-bright);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .logo-area img {
-            height: 36px;
-            width: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        main {
-            flex: 1;
-            max-width: 1000px;
-            width: 100%;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .page-title {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .page-title h1 {
-            color: var(--text-bright);
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .page-title p {
-            color: var(--text-main);
-            font-size: 1.05rem;
-        }
-
-        .vlog-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-
-        .vlog-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.75rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .vlog-card {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-                padding: 1.25rem;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#101b2d',
+                            900: '#0a111e',
+                            950: '#060a12',
+                        },
+                        gold: {
+                            300: '#f3e5ab',
+                            400: '#e5c158',
+                            500: '#d4af37',
+                            600: '#b38f24',
+                        },
+                        brand: {
+                            dark: '#0a111e',
+                            accent: '#1e3a8a',
+                            gold: '#d4af37',
+                            goldHover: '#c49f27'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
             }
         }
-
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #000;
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #b38f24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .card-glass {
+            background: rgba(16, 27, 45, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
         }
-
-        .vlog-info h2 {
-            color: var(--text-bright);
-            font-size: 1.35rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .vlog-info .meta {
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-        }
-
-        .vlog-info p {
-            font-style: italic;
-            color: var(--text-main);
-            font-size: 0.95rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border-color);
-            background: var(--card-bg);
-            font-size: 0.85rem;
-            color: #8b949e;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+        .card-glass:hover {
+            border-color: rgba(212, 175, 55, 0.6);
         }
     </style>
 </head>
-<body>
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-brand-gold selection:text-navy-950 min-h-screen flex flex-col">
 
-    <header>
-        <a href="index.html" class="logo-area">
-            <img src="https://static.wixstatic.com/media/6ce7a7_aa67a67928624d1c835a897449fab586~mv2.jpeg" alt="James Wynne Logo">
-            <span>James Wynne</span>
-        </a>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="vlog.html" style="color: var(--accent); font-weight: 600;">Vlog</a>
-            <a href="index_it.html">IT</a>
-        </nav>
-    </header>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo Asset -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="favicon.png" 
+                         onerror="this.onerror=null; this.src='./my logo en2.png';" 
+                         alt="JW English Lessons Logo" 
+                         class="h-14 w-auto object-contain transition-transform group-hover:scale-105" />
+                    <div class="hidden sm:flex flex-col">
+                        <span class="font-serif text-lg font-bold text-white group-hover:text-brand-gold transition-colors">
+                            JW ENGLISH
+                        </span>
+                        <span class="text-[10px] tracking-widest text-brand-gold uppercase font-semibold">
+                            Lessons & Method
+                        </span>
+                    </div>
+                </a>
 
-    <main>
-        <div class="page-title">
-            <h1>Video Musings &amp; Reflections</h1>
-            <p>Short philosophical explorations, physics musings, and relational psychology.</p>
+                <!-- Desktop Menu (Streamlined with Dropdown) -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="index.html#about" class="text-slate-300 hover:text-brand-gold transition-colors">About James</a>
+                    <a href="index.html#method" class="text-slate-300 hover:text-brand-gold transition-colors">Methodology</a>
+
+                    <!-- Resources & Tools Dropdown -->
+                    <div class="relative group" id="desktop-dropdown">
+                        <button type="button" id="dropdown-btn" class="flex items-center gap-1.5 text-slate-300 hover:text-brand-gold transition-colors py-2 focus:outline-none">
+                            <span>Learning & Tools</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        
+                        <div id="dropdown-menu" class="absolute left-0 mt-1 w-56 rounded-xl bg-navy-900 border border-slate-700/90 shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+                            <a href="index.html#app" class="flex items-center gap-3 px-4 py-2.5 text-slate-200 hover:bg-slate-800 hover:text-brand-gold transition-colors">
+                                <i class="fa-solid fa-gamepad text-brand-gold w-4 text-center"></i>
+                                <div>
+                                    <div class="font-semibold text-xs">Quiz App</div>
+                                    <div class="text-[10px] text-slate-400">Interactive word games</div>
+                                </div>
+                            </a>
+                            <a href="index.html#book" class="flex items-center gap-3 px-4 py-2.5 text-slate-200 hover:bg-slate-800 hover:text-brand-gold transition-colors">
+                                <i class="fa-solid fa-book text-red-400 w-4 text-center"></i>
+                                <div>
+                                    <div class="font-semibold text-xs">Free Sample Book</div>
+                                    <div class="text-[10px] text-slate-400">PDF coursebook download</div>
+                                </div>
+                            </a>
+                            <div class="my-1 border-t border-slate-800"></div>
+                            <a href="resources.html" class="flex items-center gap-3 px-4 py-2.5 text-slate-200 hover:bg-slate-800 hover:text-brand-gold transition-colors">
+                                <i class="fa-solid fa-video text-sky-400 w-4 text-center"></i>
+                                <div>
+                                    <div class="font-semibold text-xs">Videos & Worksheets</div>
+                                    <div class="text-[10px] text-slate-400">Study guides & lessons</div>
+                                </div>
+                            </a>
+                            <a href="vlog.html" class="flex items-center gap-3 px-4 py-2.5 text-slate-200 hover:bg-slate-800 hover:text-brand-gold transition-colors">
+                                <i class="fa-solid fa-clapperboard text-amber-400 w-4 text-center"></i>
+                                <div>
+                                    <div class="font-semibold text-xs">Vlogs & Musings</div>
+                                    <div class="text-[10px] text-slate-400">Reflections & philosophy</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="h-5 w-px bg-slate-800"></div>
+
+                    <!-- Language Switcher -->
+                    <a href="index_it.html" title="Versione Italiana" aria-label="Versione Italiana" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-700 hover:border-brand-gold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" class="w-5 h-3.5 rounded-sm shadow-sm">
+                            <rect width="1" height="2" x="0" fill="#009246"/>
+                            <rect width="1" height="2" x="1" fill="#ffffff"/>
+                            <rect width="1" height="2" x="2" fill="#ce2b37"/>
+                        </svg>
+                        <span class="text-xs font-semibold text-slate-300">IT</span>
+                    </a>
+
+                    <!-- Share Button -->
+                    <button type="button" onclick="shareWebsite()" title="Share this page" aria-label="Share this page" class="p-2 rounded-lg border border-slate-700 hover:border-brand-gold text-slate-300 hover:text-brand-gold transition-colors">
+                        <i class="fa-solid fa-share-nodes text-sm"></i>
+                    </button>
+
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/393515316723" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg shadow-emerald-900/30 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Controls -->
+                <div class="flex items-center gap-2 md:hidden">
+                    <button type="button" onclick="shareWebsite()" title="Share this page" aria-label="Share this page" class="p-2 rounded-lg border border-slate-700 text-slate-300 hover:text-brand-gold hover:border-brand-gold transition-colors">
+                        <i class="fa-solid fa-share-nodes text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <div class="vlog-grid">
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html#about" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">About James</a>
+            <a href="index.html#method" class="block px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Methodology</a>
+            
+            <div class="pt-1 pb-1">
+                <div class="px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-brand-gold/80">Learning & Tools</div>
+                <a href="index.html#app" class="block pl-6 pr-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Quiz App</a>
+                <a href="index.html#book" class="block pl-6 pr-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Free Book</a>
+                <a href="resources.html" class="block pl-6 pr-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Videos & Worksheets</a>
+                <a href="vlog.html" class="block pl-6 pr-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Vlogs & Musings</a>
+            </div>
+
+            <div class="border-t border-slate-800 pt-2">
+                <a href="index_it.html" class="flex items-center gap-2 px-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" class="w-5 h-3.5 rounded-sm">
+                        <rect width="1" height="2" x="0" fill="#009246"/>
+                        <rect width="1" height="2" x="1" fill="#ffffff"/>
+                        <rect width="1" height="2" x="2" fill="#ce2b37"/>
+                    </svg>
+                    <span>Versione Italiana</span>
+                </a>
+            </div>
+            <a href="https://wa.me/393515316723" target="_blank" rel="noopener" class="block px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-center mt-2">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Contact on WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-gold/10 text-brand-gold text-xs font-semibold uppercase tracking-wider">
+                <i class="fa-solid fa-clapperboard"></i>
+                Vlogs & Musings
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-serif font-bold text-white">
+                Video Musings & <span class="gold-gradient-text">Reflections</span>
+            </h1>
+            <p class="text-slate-300 text-base">
+                Short philosophical explorations, physics musings, and relational psychology.
+            </p>
+        </div>
+
+        <div class="flex flex-col gap-8">
             <!-- Vlog 1: Soulmate Trap -->
-            <div class="vlog-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/VhXE8peQNvY" title="LA TRAPPOLA DELL'ANIMA GEMELLA - INFATUAZIONE vs. AMORE" allowfullscreen></iframe>
+            <div class="card-glass p-6 sm:p-8 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-2xl">
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-navy-900">
+                    <iframe class="absolute top-0 left-0 w-full h-full border-0" src="https://www.youtube.com/embed/VhXE8peQNvY" title="LA TRAPPOLA DELL'ANIMA GEMELLA - INFATUAZIONE vs. AMORE" allowfullscreen></iframe>
                 </div>
-                <div class="vlog-info">
-                    <div class="meta">Italian with English Subtitles &bull; Nov 15, 2026</div>
-                    <h2>La Trappola Dell'Anima Gemella — Infatuation vs. Love</h2>
-                    <p>Exploring the illusion of soulmates, false polarization in human affection, and the reality of relational maturity over simple infatuation.</p>
+                <div class="space-y-3">
+                    <div class="text-xs font-semibold text-brand-gold uppercase tracking-wider">Italian with English Subtitles &bull; Nov 15, 2026</div>
+                    <h2 class="font-serif font-bold text-white text-xl">La Trappola Dell'Anima Gemella — Infatuation vs. Love</h2>
+                    <p class="text-slate-300 text-sm italic leading-relaxed">Exploring the illusion of soulmates, false polarization in human affection, and the reality of relational maturity over simple infatuation.</p>
                 </div>
             </div>
 
             <!-- Vlog 2: 4 AM Physics & Relationships -->
-            <div class="vlog-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/HCzZThOQrTU" title="Waking Up at 4 AM Makes You Question Physics and Relationships" allowfullscreen></iframe>
+            <div class="card-glass p-6 sm:p-8 rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center shadow-2xl">
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-navy-900">
+                    <iframe class="absolute top-0 left-0 w-full h-full border-0" src="https://www.youtube.com/embed/HCzZThOQrTU" title="Waking Up at 4 AM Makes You Question Physics and Relationships" allowfullscreen></iframe>
                 </div>
-                <div class="vlog-info">
-                    <div class="meta">English &bull; Nov 14, 2026</div>
-                    <h2>Waking Up at 4 AM Makes You Question Physics and Relationships</h2>
-                    <p>A spontaneous morning reflection connecting Isaac Newton's Principia Mathematica, Henri Bergson's concept of durée, and the simple geometry of romantic distance and time.</p>
+                <div class="space-y-3">
+                    <div class="text-xs font-semibold text-brand-gold uppercase tracking-wider">English &bull; Nov 14, 2026</div>
+                    <h2 class="font-serif font-bold text-white text-xl">Waking Up at 4 AM Makes You Question Physics and Relationships</h2>
+                    <p class="text-slate-300 text-sm italic leading-relaxed">A spontaneous morning reflection connecting Isaac Newton's Principia Mathematica, Henri Bergson's concept of durée, and the simple geometry of romantic distance and time.</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>jwenglish@outlook.it | <a href="https://jiwynne72-tech.github.io/james/">Website</a> | WhatsApp: +39 351 5316723</p>
+    <!-- Sticky Footer -->
+    <footer class="sticky bottom-0 z-40 bg-navy-950/95 backdrop-blur-md border-t border-slate-800 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+            <img src="./my logo en_2.png" 
+                 onerror="this.onerror=null; this.src='./my logo en2.png';" 
+                 alt="JW English Lessons Logo" 
+                 class="h-7 w-auto opacity-85" />
+            <div class="text-xs text-slate-400 flex items-center gap-2">
+                <a href="mailto:jwenglish@outlook.it" class="hover:text-brand-gold transition-colors">email</a>
+                <span class="text-slate-600">|</span>
+                <a href="https://jiwynne72-tech.github.io/james/" target="_blank" rel="noopener" class="hover:text-brand-gold transition-colors">website</a>
+                <span class="text-slate-600">|</span>
+                <a href="https://wa.me/00393515316723" target="_blank" rel="noopener" class="hover:text-brand-gold transition-colors">whatsapp</a>
+            </div>
+        </div>
     </footer>
 
+    <!-- Copy Confirmation Toast -->
+    <div id="share-toast" class="fixed bottom-16 right-6 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-navy-800 border border-brand-gold text-white text-sm font-medium shadow-2xl">
+        <i class="fa-solid fa-check text-brand-gold"></i>
+        <span id="share-toast-text">Link copied to clipboard!</span>
+    </div>
+
+    <!-- Navigation & Share Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('share-toast');
+            const toastText = document.getElementById('share-toast-text');
+            if (toastText) toastText.textContent = message;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3000);
+        }
+
+        async function shareWebsite() {
+            const isWebProtocol = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+            const shareUrl = isWebProtocol ? window.location.href : 'https://jiwynne72-tech.github.io/';
+            
+            const shareData = {
+                title: 'James Wynne | Vlogs & Musings',
+                text: 'Check out video musings and philosophical reflections by James Wynne:',
+                url: shareUrl
+            };
+
+            if (isWebProtocol && navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                    return;
+                } catch (err) {
+                    if (err.name === 'AbortError') return;
+                }
+            }
+
+            try {
+                await navigator.clipboard.writeText(shareUrl);
+                showToast(isWebProtocol ? 'Link copied to clipboard!' : 'Local preview: Live URL copied!');
+            } catch (err) {
+                prompt('Copy this link to share:', shareUrl);
+            }
+        }
+    </script>
 </body>
 </html>
