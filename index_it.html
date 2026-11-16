@@ -138,12 +138,19 @@ window.addEventListener("load", function(){
                                     <div class="text-[10px] text-slate-400">Guide allo studio e lezioni</div>
                                 </div>
                             </a>
+                            <a href="vlog.html" class="flex items-center gap-3 px-4 py-2.5 text-slate-200 hover:bg-slate-800 hover:text-brand-gold transition-colors">
+                                <i class="fa-solid fa-clapperboard text-amber-400 w-4 text-center"></i>
+                                <div>
+                                    <div class="font-semibold text-xs">Vlog & Riflessioni</div>
+                                    <div class="text-[10px] text-slate-400">Pensieri e filosofia</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
                     <div class="h-5 w-px bg-slate-800"></div>
 
-                    <!-- Switch to English (Placed directly before Share & WhatsApp like index.html) -->
+                    <!-- Switch to English -->
                     <a href="index.html" title="English Version" aria-label="English Version" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-700 hover:border-brand-gold transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" class="w-5 h-3.5 rounded-sm shadow-sm">
                             <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
@@ -193,6 +200,7 @@ window.addEventListener("load", function(){
                 <a href="#app" class="block pl-6 pr-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">App Quiz</a>
                 <a href="#book" class="block pl-6 pr-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Libro Gratuito</a>
                 <a href="resources.html" class="block pl-6 pr-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Video & Schede</a>
+                <a href="vlog.html" class="block pl-6 pr-3 py-2 rounded-md text-slate-200 hover:bg-slate-800 hover:text-brand-gold">Vlog & Riflessioni</a>
             </div>
 
             <div class="border-t border-slate-800 pt-2">
@@ -530,7 +538,8 @@ window.addEventListener("load", function(){
                     </div>
                     <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white">Guarda & Ascolta</h3>
                     <p class="text-slate-300 text-sm">
-                        Scopri un'anteprima dell'esperienza di apprendimento e dello stile di insegnamento.
+                        Scopri un'anteprima dell'esperienza di apprendimento e dello stile di insegnamento.<br>
+                        Esplora la nostra sezione video, schede e vlog per approfondire.
                     </p>
                 </div>
 
@@ -628,8 +637,8 @@ window.addEventListener("load", function(){
             const toast = document.getElementById('share-toast');
             const toastText = document.getElementById('share-toast-text');
             if (toastText) toastText.textContent = message;
-            toast.classList.remove('hidden');
             toast.classList.add('flex');
+            toast.classList.remove('hidden');
             setTimeout(() => {
                 toast.classList.add('hidden');
                 toast.classList.remove('flex');

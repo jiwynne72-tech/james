@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Wynne | Vlogs & Musings</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: rgba(22, 27, 34, 0.75);
+            --border-color: rgba(240, 246, 252, 0.1);
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+            --accent: #58a6ff;
+            --accent-hover: #79c0ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #090d16 0%, #111927 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-bright);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .logo-area img {
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1000px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .page-title h1 {
+            color: var(--text-bright);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+
+        .vlog-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .vlog-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .vlog-card {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+                padding: 1.25rem;
+            }
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .vlog-info h2 {
+            color: var(--text-bright);
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .vlog-info .meta {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .vlog-info p {
+            font-style: italic;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--card-bg);
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-area">
+            <img src="https://static.wixstatic.com/media/6ce7a7_aa67a67928624d1c835a897449fab586~mv2.jpeg" alt="James Wynne Logo">
+            <span>James Wynne</span>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="vlog.html" style="color: var(--accent); font-weight: 600;">Vlog</a>
+            <a href="index_it.html">IT</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-title">
+            <h1>Video Musings &amp; Reflections</h1>
+            <p>Short philosophical explorations, physics musings, and relational psychology.</p>
+        </div>
+
+        <div class="vlog-grid">
+            <!-- Vlog 1: Soulmate Trap -->
+            <div class="vlog-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VhXE8peQNvY" title="LA TRAPPOLA DELL'ANIMA GEMELLA - INFATUAZIONE vs. AMORE" allowfullscreen></iframe>
+                </div>
+                <div class="vlog-info">
+                    <div class="meta">Italian with English Subtitles &bull; Nov 15, 2026</div>
+                    <h2>La Trappola Dell'Anima Gemella — Infatuation vs. Love</h2>
+                    <p>Exploring the illusion of soulmates, false polarization in human affection, and the reality of relational maturity over simple infatuation.</p>
+                </div>
+            </div>
+
+            <!-- Vlog 2: 4 AM Physics & Relationships -->
+            <div class="vlog-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/HCzZThOQrTU" title="Waking Up at 4 AM Makes You Question Physics and Relationships" allowfullscreen></iframe>
+                </div>
+                <div class="vlog-info">
+                    <div class="meta">English &bull; Nov 14, 2026</div>
+                    <h2>Waking Up at 4 AM Makes You Question Physics and Relationships</h2>
+                    <p>A spontaneous morning reflection connecting Isaac Newton's Principia Mathematica, Henri Bergson's concept of durée, and the simple geometry of romantic distance and time.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>jwenglish@outlook.it | <a href="https://jiwynne72-tech.github.io/james/">Website</a> | WhatsApp: +39 351 5316723</p>
+    </footer>
+
+</body>
+</html>
